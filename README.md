@@ -1,22 +1,17 @@
-Ever After High Character Database
+**Ever After High Character Database**
 
 A Python CLI tool to search, filter, and browse Ever After High characters by alignment, story, and more. Built while learning core Python fundamentals like functions, lists, and dictionaries.
 
-How to Run
+_**How to Run**_
+bash: python3 main.py / python main.py
 
-bashpython3 main.py
-
-Features
-
-
+_**Features**_
 View all characters
 Search for a character by name
 Filter characters by alignment (Royal / Rebel)
 
 
-What I Learned
-
-
+_**What I Learned**_
 Working with lists and dictionaries
 Writing and testing functions
 Building a simple menu-driven CLI program in Python
