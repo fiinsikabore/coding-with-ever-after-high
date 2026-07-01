@@ -1,137 +1,146 @@
 #!/usr/bin/python3
-characters = [
+questions = [
     {
-        "name": "Raven Queen",
-        "parent_story": "The Evil Queen (Snow White)",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To choose her own path instead of becoming evil",
+        "question": "Legacy Day is here. The Storybook of Legends is open. Do you sign it?",
+        "choices": {
+            "a": {"text": "Yes, it's my destiny.", "points": "Royal"},
+            "b": {"text": "No, I choose my own path.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Apple White",
-        "parent_story": "Snow White",
-        "alignment": "Royal",
-        "secret_heart_desire": "To become queen and live happily ever after",
+        "question": "How do you feel about your parent's story repeating with you?",
+        "choices": {
+            "a": {"text": "Excited, it's an honor.", "points": "Royal"},
+            "b": {"text": "Uneasy, I want something different.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Madeline Hatter",
-        "parent_story": "The Mad Hatter (Alice in Wonderland)",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To stay wonderfully herself, riddles and all",
+        "question": "The Dragon Games are starting. How do you want to compete?",
+        "choices": {
+            "a": {"text": "Follow the traditional rules and prove myself the classic way.", "points": "Royal"},
+            "b": {"text": "Find a clever workaround nobody's tried before.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Briar Beauty",
-        "parent_story": "Sleeping Beauty",
-        "alignment": "Royal",
-        "secret_heart_desire": "To live life to the fullest before her 100-year sleep",
+        "question": "You're invited to a royal ball. What's your reaction?",
+        "choices": {
+            "a": {"text": "Thrilled — I love royal traditions.", "points": "Royal"},
+            "b": {"text": "I'd rather skip it and do something unexpected instead.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Ashlynn Ella",
-        "parent_story": "Cinderella",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To be with Hunter instead of a prince",
+        "question": "An enchanted winter has trapped the school (Epic Winter). What's your move?",
+        "choices": {
+            "a": {"text": "Trust that a hero will come save everyone, like in the old tales.", "points": "Royal"},
+            "b": {"text": "Take charge and find a new way to break the spell myself.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Hunter Huntsman",
-        "parent_story": "The Huntsman (Snow White)",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To live freely in the forest, not bound by his story",
+        "question": "You fall down a rabbit hole into Wonderland. What do you do?",
+        "choices": {
+            "a": {"text": "Look for a way back to the world I know.", "points": "Royal"},
+            "b": {"text": "Explore — this is exactly the kind of adventure I want.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Cedar Wood",
-        "parent_story": "Pinocchio",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To become a real girl with her own free will",
+        "question": "Spring is unsprung and the seasons are out of balance. How do you respond?",
+        "choices": {
+            "a": {"text": "Follow the old rituals to restore order.", "points": "Royal"},
+            "b": {"text": "Question whether the old rituals even make sense anymore.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Cerise Hood",
-        "parent_story": "Little Red Riding Hood",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To keep her wolf heritage secret while being herself",
+        "question": "Your roommate has the opposite destiny alignment as you. How do you feel?",
+        "choices": {
+            "a": {"text": "It's fine, everyone has their own story to follow.", "points": "Royal"},
+            "b": {"text": "It makes me want to fight for the right to choose, for both of us.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Dexter Charming",
-        "parent_story": "King Charming",
-        "alignment": "Royal",
-        "secret_heart_desire": "To win Raven's heart and prove himself charming",
+        "question": "There's a school tradition you personally don't agree with. What do you do?",
+        "choices": {
+            "a": {"text": "Follow it anyway — traditions matter.", "points": "Royal"},
+            "b": {"text": "Speak up and try to change it.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Daring Charming",
-        "parent_story": "King Charming",
-        "alignment": "Royal",
-        "secret_heart_desire": "To be the hero of someone else's story, not just his own",
+        "question": "You're offered a shortcut that skips a key part of your parent's story. Do you take it?",
+        "choices": {
+            "a": {"text": "No, I want the full story exactly as it was written.", "points": "Royal"},
+            "b": {"text": "Yes, why suffer through something I can avoid?", "points": "Rebel"},
+        },
     },
     {
-        "name": "Darling Charming",
-        "parent_story": "King Charming",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To be a knight in shining armor, not a damsel",
+        "question": "Thronecoming is approaching. What matters most to you about it?",
+        "choices": {
+            "a": {"text": "Being crowned and celebrated like royalty.", "points": "Royal"},
+            "b": {"text": "Having fun and being myself, crown or not.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Lizzie Hearts",
-        "parent_story": "The Queen of Hearts (Alice in Wonderland)",
-        "alignment": "Royal",
-        "secret_heart_desire": "To rule fairly, unlike her mother",
+        "question": "A magic mirror shows you your future exactly as your story dictates. Your reaction?",
+        "choices": {
+            "a": {"text": "Relief — I know exactly what to expect.", "points": "Royal"},
+            "b": {"text": "Frustration — I want an unwritten future.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Kitty Cheshire",
-        "parent_story": "The Cheshire Cat (Alice in Wonderland)",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To cause mischief and choose her own loyalties",
+        "question": "You're chosen to give a speech about your family's legacy. What do you say?",
+        "choices": {
+            "a": {"text": "I'm proud to carry on what my parents started.", "points": "Royal"},
+            "b": {"text": "I'll honor where I come from, but I'm writing my own ending.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Blondie Lockes",
-        "parent_story": "Goldilocks",
-        "alignment": "Royal",
-        "secret_heart_desire": "To report on the best stories as a journalist",
+        "question": "The school debates changing the rules around Legacy Day. Where do you stand?",
+        "choices": {
+            "a": {"text": "The old system works — it shouldn't change.", "points": "Royal"},
+            "b": {"text": "Everyone deserves a choice — it's time for change.", "points": "Rebel"},
+        },
     },
     {
-        "name": "Cupid",
-        "parent_story": "Eros / Cupid (mythology)",
-        "alignment": "Rebel",
-        "secret_heart_desire": "To be accepted at the school despite not being from a classic fairytale",
+        "question": "At the end of the day, what matters most to you?",
+        "choices": {
+            "a": {"text": "Honoring my story and the legacy before me.", "points": "Royal"},
+            "b": {"text": "Writing a story that's truly, completely mine.", "points": "Rebel"},
+        },
     },
 ]
 
-def display_all(characters):
-    for character in characters:
-        print(f"{character['name']} - {character['alignment']}")
 
-def search_by_name(characters, name):
-    for character in characters:
-        if name.lower() in character["name"].lower():
-            return character
-    return None
+def ask_question(question_data):
+    print(question_data["question"])
+    for key, choice in question_data["choices"].items():
+        print(f"  {key}) {choice['text']}")
 
-def filter_by_alignment(characters, alignment):
-    result = []
-    for c in characters:
-        if c["alignment"].lower() == alignment.lower():
-            result.append(c)
-    return result
+    answer = input("Your answer: ").lower()
+    while answer not in question_data["choices"]:
+        answer = input("Please choose a valid option: ").lower()
+
+    return question_data["choices"][answer]["points"]
+
+def run_quiz(questions):
+    scores = {"Royal": 0, "Rebel": 0}
+
+    for question_data in questions:
+        result = ask_question(question_data)
+        scores[result] += 1
+
+    return scores
+
+def get_result(scores):
+    if scores["Royal"] > scores["Rebel"]:
+        return "Royal"
+    elif scores["Rebel"] > scores["Royal"]:
+        return "Rebel"
+    else:
+        return "Neutral — a true Royal Rebel!"
 
 def main():
-    while True:
-        print("\n--- Ever After High Character Database ---")
-        print("1. View all characters")
-        print("2. Search by name")
-        print("3. Filter by alignment")
-        print("4. Exit")
-        choice = input("Choose an option: ")
-
-        if choice == "1":
-            display_all(characters)
-        elif choice == "2":
-            name = input("Enter a name: ")
-            result = search_by_name(characters, name)
-            print(result if result else "Character not found.")
-        elif choice == "3":
-            alignment = input("Royal or Rebel? ")
-            for c in filter_by_alignment(characters, alignment):
-                print(c["name"])
-        elif choice == "4":
-            print("Goodbye!")
-            break
-        else:
-            print("Invalid choice, try again.")
+        print("=== Royal or Rebel? ===")
+        scores = run_quiz(questions)
+        result = get_result(scores)
+        print(f"\nYour result: {result}")
+        print(f"Final scores: {scores}")
 
 main()

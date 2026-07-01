@@ -1,17 +1,9 @@
-**Ever After High Character Database**
+# Royal or Rebel? Quiz
 
-A Python CLI tool to search, filter, and browse Ever After High characters by alignment, story, and more. Built while learning core Python fundamentals like functions, lists, and dictionaries.
+A text-based personality quiz that determines whether you're a Royal or a Rebel based on your answers.
 
-_**How to Run**_
-bash: python3 main.py / python main.py
+## How to Run
 
-_**Features**_
-View all characters
-Search for a character by name
-Filter characters by alignment (Royal / Rebel)
-
-
-_**What I Learned**_
-Working with lists and dictionaries
-Writing and testing functions
-Building a simple menu-driven CLI program in Python
+```bash
+python3 main.py
+```
