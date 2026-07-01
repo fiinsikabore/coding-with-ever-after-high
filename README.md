@@ -25,7 +25,7 @@ Python 3, standard library only.
 ## How to Run Any Project
 ```bash
 cd <project-folder>
-python main.py or trivia_questions and the hexcellent-trivia project
+python main.py and trivia_questions for the hexcellent-trivia project
 ```
 
 ## What I Learned
