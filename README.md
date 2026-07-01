@@ -13,8 +13,24 @@ A text-based personality quiz that determines whether you're a Royal or a Rebel 
 ### [Epic Winter Rescue Mission](./epic-winter-rescue)
 A choice-driven simulation set during Ever After High's "Epic Winter" crisis. Every decision affects both your Royal/Rebel alignment and a rising danger level.
 
+### [Mini Text Adventure](./text-adventure)
+A choose-your-own-adventure through 19 real locations from the show, from Charmitage Hall to the Evil Queen's Mirror Prison.
+
+### [Hexcellent Trivia Game](./hexcellent-trivia)
+A trivia quiz testing knowledge of the whole show, from characters and relationships to major specials like Legacy Day, Dragon Games, and Epic Winter.
+
+## Tech
+Python 3, standard library only.
+
 ## How to Run Any Project
 ```bash
 cd <project-folder>
 python main.py
 ```
+
+## What I Learned
+- Working with lists, dictionaries, and nested dictionaries
+- Writing and testing functions with multiple return values
+- Building menu-driven and choice-driven CLI programs
+- Tracking state (scores, danger levels) across a loop
+- Organizing a multi-project repository cleanly
