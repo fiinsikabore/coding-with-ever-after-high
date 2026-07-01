@@ -1,0 +1,208 @@
+#!/usr/bin/python3
+trivia_questions = [
+    {
+        "question": "Whose daughter is Raven Queen?",
+        "choices": {
+            "a": "Cinderella",
+            "b": "The Evil Queen",
+            "c": "Sleeping Beauty",
+            "d": "Snow White",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "What event requires students to sign the Storybook of Legends?",
+        "choices": {
+            "a": "Thronecoming",
+            "b": "Dragon Games",
+            "c": "Legacy Day",
+            "d": "Spring Unsprung",
+        },
+        "correct": "c",
+    },
+    {
+        "question": "Who is Apple White's destined roommate?",
+        "choices": {
+            "a": "Briar Beauty",
+            "b": "Raven Queen",
+            "c": "Madeline Hatter",
+            "d": "Ashlynn Ella",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "What competition involves students training and racing dragons?",
+        "choices": {
+            "a": "The Dragon Games",
+            "b": "Thronecoming",
+            "c": "Legacy Day",
+            "d": "Epic Winter",
+        },
+        "correct": "a",
+    },
+    {
+        "question": "Whose story is Ashlynn Ella destined to follow?",
+        "choices": {
+            "a": "Snow White",
+            "b": "Sleeping Beauty",
+            "c": "Cinderella",
+            "d": "Little Red Riding Hood",
+        },
+        "correct": "c",
+    },
+    {
+        "question": "Who does Ashlynn Ella secretly love instead of following her prince storyline?",
+        "choices": {
+            "a": "Dexter Charming",
+            "b": "Hunter Huntsman",
+            "c": "Daring Charming",
+            "d": "Sparrow Hood",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "Whose daughter is Madeline Hatter?",
+        "choices": {
+            "a": "The White Rabbit",
+            "b": "The Cheshire Cat",
+            "c": "The Mad Hatter",
+            "d": "The Queen of Hearts",
+        },
+        "correct": "c",
+    },
+    {
+        "question": "In the special 'Way Too Wonderland,' where do several characters end up trapped?",
+        "choices": {
+            "a": "The Mirror world",
+            "b": "Wonderland",
+            "c": "The Enchanted Forest",
+            "d": "The Dark Forest",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "Who is the headmaster of Ever After High?",
+        "choices": {
+            "a": "Professor Rumpelstiltskin",
+            "b": "Milton Grimm",
+            "c": "Giles Grimm",
+            "d": "Baba Yaga",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "What magical item lets students see into other parts of the Storybook of Legends?",
+        "choices": {
+            "a": "The Wishing Well",
+            "b": "The Mirror Classroom mirrors",
+            "c": "The Spelltacular Crystal",
+            "d": "The Glass Slipper",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "In 'Epic Winter,' whose out-of-control ice magic traps the school in an eternal winter?",
+        "choices": {
+            "a": "Crystal Winter",
+            "b": "Farrah Goodfairy",
+            "c": "Lizzie Hearts",
+            "d": "Ginger Breadhouse",
+        },
+        "correct": "a",
+    },
+    {
+        "question": "What are students who accept their destined fairytale roles called?",
+        "choices": {
+            "a": "Rebels",
+            "b": "Royals",
+            "c": "Legends",
+            "d": "Charmings",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "Who is Cerise Hood's mysterious family secret connected to?",
+        "choices": {
+            "a": "She is part fairy",
+            "b": "She is part wolf",
+            "c": "She is royalty in disguise",
+            "d": "She is part mermaid",
+        },
+        "correct": "b",
+    },
+    {
+        "question": "What special deals with the seasons falling out of balance?",
+        "choices": {
+            "a": "Spring Unsprung",
+            "b": "Epic Winter",
+            "c": "Way Too Wonderland",
+            "d": "Dragon Games",
+        },
+        "correct": "a",
+    },
+    {
+        "question": "What formal event at the end of the school year celebrates the graduating seniors?",
+        "choices": {
+            "a": "Legacy Day",
+            "b": "Thronecoming",
+            "c": "The Spelltacular",
+            "d": "Coronation Day",
+        },
+        "correct": "c",
+    },
+]
+
+def ask_trivia_question(question_data):
+    print("\n" + question_data["question"])
+    for key, text in question_data["choices"].items():
+        print(f"  {key}) {text}")
+
+    answer = input("Your answer: ").lower().strip()
+    while answer not in question_data["choices"]:
+        answer = input("Please choose a valid option: ").lower().strip()
+
+    if answer == question_data["correct"]:
+        print("Correct!")
+        return True
+    else:
+        correct_text = question_data["choices"][question_data["correct"]]
+        print(f"Not quite - the correct answer was: {correct_text}")
+        return False
+
+
+def run_trivia(trivia_questions):
+    score = 0
+
+    for i, question_data in enumerate(trivia_questions, start=1):
+        print(f"\n--- Question {i} of {len(trivia_questions)} ---")
+        if ask_trivia_question(question_data):
+            score += 1
+
+    return score
+
+def get_final_message(score, total):
+    percent = round((score / total) * 100)
+
+    if percent == 100:
+        return "Perfect score! You're basically Headmaster Grimm's star pupil!"
+    elif percent >= 70:
+        return "Hexcellent job! You really know your Ever After High."
+    elif percent >= 40:
+        return "Not bad! A bit more studying in the Mirror Classroom couldn't hurt."
+    else:
+        return "Time to hit the books at the Book End Bookstore!"
+
+def main():
+    print("=== Hexcellent Trivia Game ===")
+    print("Answer the questions below to test your Ever After High knowledge!\n")
+
+    score = run_trivia(trivia_questions)
+    total = len(trivia_questions)
+    message = get_final_message(score, total)
+
+    print(f"\n=== Results ===")
+    print(f"You scored {score} out of {total}!")
+    print(message)
+
+main()
+
