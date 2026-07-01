@@ -13,9 +13,6 @@ A text-based personality quiz that determines whether you're a Royal or a Rebel 
 ### [Epic Winter Rescue Mission](./epic-winter-rescue)
 A choice-driven simulation set during Ever After High's "Epic Winter" crisis. Every decision affects both your Royal/Rebel alignment and a rising danger level.
 
-## Tech
-Python 3, standard library only.
-
 ## How to Run Any Project
 ```bash
 cd <project-folder>
