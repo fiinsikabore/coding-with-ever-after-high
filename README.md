@@ -1,17 +1,23 @@
-**Ever After High Character Database**
+# Ever After High Python Projects
 
-A Python CLI tool to search, filter, and browse Ever After High characters by alignment, story, and more. Built while learning core Python fundamentals like functions, lists, and dictionaries.
+A collection of small Python projects built around the Ever After High universe, made while learning core Python fundamentals: functions, lists, dictionaries, and loops.
 
-_**How to Run**_
-bash: python3 main.py / python main.py
+## Projects
 
-_**Features**_
-View all characters
-Search for a character by name
-Filter characters by alignment (Royal / Rebel)
+### [Character Database](./character-database)
+A CLI tool to browse, search, and filter Ever After High characters by alignment, story, and more.
 
+### [Royal or Rebel? Quiz](./royal-or-rebel-quiz)
+A text-based personality quiz that determines whether you're a Royal or a Rebel based on your answers.
 
-_**What I Learned**_
-Working with lists and dictionaries
-Writing and testing functions
-Building a simple menu-driven CLI program in Python
+### [Epic Winter Rescue Mission](./epic-winter-rescue)
+A choice-driven simulation set during Ever After High's "Epic Winter" crisis. Every decision affects both your Royal/Rebel alignment and a rising danger level.
+
+## Tech
+Python 3, standard library only.
+
+## How to Run Any Project
+```bash
+cd <project-folder>
+python main.py
+```
